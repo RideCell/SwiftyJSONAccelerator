@@ -195,7 +195,7 @@ class SJEditorViewController: NSViewController, NSTextViewDelegate {
      */
     func handleError(error: NSError?) {
         if let _ = error!.userInfo["debugDescription"] as? String? {
-            let message: String = error!.userInfo["NSDebugDescription"]! as! String
+            let message: String = error!.userInfo["NSDebugDescription"]! as String
             let numbers: [String] = message.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet)
 
             var validNumbers:[Int] = []
