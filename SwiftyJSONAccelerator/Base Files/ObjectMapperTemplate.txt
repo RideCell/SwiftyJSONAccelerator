@@ -3,8 +3,17 @@
     Map a JSON object to this class using ObjectMapper
     - parameter map: A mapping from ObjectMapper
     */
-    required public init?(_ map: Map){
+    required open init?(map: Map){
 
+    }
+
+    /**
+    Convenience intializer for converting
+    a JSON resonse object to the model type
+    */
+    open convenience init(details: [String: Any]) {
+        let map = Map(mappingType: .fromJSON, JSON: details)
+        self.init(map:map)!
     }
 
     /**
